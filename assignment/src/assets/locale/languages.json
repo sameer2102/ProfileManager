@@ -1,0 +1,80 @@
+{
+  "languages":[
+    {
+      "language":"English",
+      "placeHolders":{
+        "header":"Profile Management",
+        "title":"Profile",
+        "userName":"Username",
+        "firstName":"First Name",
+        "lastName":"Last Name",
+        "email":"Email",
+        "save":"Save",
+        "loadingProfile":"Loading profile...",
+        "savingProfile":"Saving profile...",
+        "error":"Error!"
+      }
+    },
+    {
+      "language":"French",
+      "placeHolders":{
+        "header":"Gestion de profils",
+        "title":"Profil",
+        "userName":"Nom d'utilisateur",
+        "firstName":"Prénom",
+        "lastName":"Nom de famille",
+        "email":"E-mail",
+        "save":"sauvegarder",
+        "loadingProfile":"Chargement du profil...",
+        "savingProfile":"Enregistrement du profil...",
+        "error":"Erreur!"
+      }
+    },
+    {
+      "language":"Irish",
+      "placeHolders":{
+        "header":"Bainistíocht Próifíle",
+        "title":"Próifíl",
+        "userName":"Ainm úsáideora",
+        "firstName":"Ainm",
+        "lastName":"Ainm clainne",
+        "email":"E-mail",
+        "save":"Sábháil",
+        "loadingProfile":"Próifíl luchtaithe ...",
+        "savingProfile":"Próifíl shábháil ...",
+        "error":"Earráid!"
+      }
+    },
+    {
+      "language":"Dutch",
+      "placeHolders":{
+        "header":"Profielbeheer",
+        "title":"Profiel",
+        "userName":"gebruikersnaam",
+        "firstName":"Voornaam",
+        "lastName":"Achternaam",
+        "email":"Email",
+        "save":"Opslaan",
+        "loadingProfile":"Profiel laden...",
+        "savingProfile":"Profiel opslaan...",
+        "error":"Fout!"
+      }
+    },
+    {
+      "language":"Spanish",
+      "placeHolders":{
+        "header":"Gestión de perfiles",
+        "title":"Perfil",
+        "userName":"Nombre de usuario",
+        "firstName":"Primer nombre",
+        "lastName":"Apellido",
+        "email":"Email",
+        "save":"Guardar",
+        "loadingProfile":"Cargando perfil ...",
+        "savingProfile":"Guardando perfil ...",
+        "error":"Error!"
+      }
+    }
+
+  ]
+}

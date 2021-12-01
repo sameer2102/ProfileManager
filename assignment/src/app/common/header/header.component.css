@@ -1,0 +1,18 @@
+.myHeader{
+  background-color: #2a99c5;
+  color: white;
+}
+
+
+.nav-item-text {
+  font-size: 22px;
+}
+
+
+.navbar-nav{
+  margin-left: 25px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}

@@ -1,0 +1,72 @@
+<div *ngIf="language">
+  <div class="container">
+    <div class="row" style="text-align: center; font-family: Rubik">
+      <h1 style="font-size: 70px">{{ language.placeHolders.title }}</h1>
+    </div>
+  </div>
+  <div class="justify-content-end">
+    <div style="background-color: #eeeeee; width: 100%; height: 500px">
+      <div class="container">
+        <div class="row" style="font-family: Rubik">
+          <br /><br /><br /><br /><br />
+          <div class="col-xs-4" style="margin-left: 35%">
+            <div>
+              <label>{{language.placeHolders.userName}} : </label>
+              {{ this.user.username }}
+            </div>
+            <br />
+            <div>
+              <label>{{language.placeHolders.firstName}}:</label>
+              <input
+                type="text"
+                [disabled]="loadingData"
+                [(ngModel)]="user.firstName"
+                class="form-control"
+                (input)="nameChanged()"
+              />
+            </div>
+            <div>
+              <label>{{language.placeHolders.lastName}}:</label>
+              <input
+                type="text"
+                [disabled]="loadingData"
+                [(ngModel)]="user.lastName"
+                class="form-control"
+                (input)="nameChanged()"
+              />
+            </div>
+            <div>
+              <label>{{language.placeHolders.email}}:</label>
+              <input
+                type="text"
+                disabled
+                [(ngModel)]="user.email"
+                class="form-control"
+              />
+            </div>
+            <br />
+            <button
+              class="btn-primary btn-lg rounded-button"
+              style="background-color: #2a99c5; width: 360px"
+              (click)="saveProfile()"
+            >
+            {{language.placeHolders.save}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="margin-top: 30px">
+    <div class="row" style="text-align: center; font-family: Rubik">
+      <div class="info message" *ngIf="loadingData">{{language.placeHolders.loadingProfile}}</div>
+      <div class="info message" *ngIf="savingData">{{language.placeHolders.savingProfile}}</div>
+      <div class="error message" *ngIf="nameError != ''">
+        <span style="font-weight: bold">{{language.placeHolders.error}}</span> {{ nameError }}
+      </div>
+      <div class="error message" *ngIf="emailError != ''">
+        {{ emailError }}
+      </div>
+    </div>
+  </div>
+</div>
