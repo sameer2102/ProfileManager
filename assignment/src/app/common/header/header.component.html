@@ -11,13 +11,16 @@
     <div class="collapse navbar-collapse" style="margin-top: 5px">
 
       <ul class="nav navbar-nav navbar-right">
-        <select class="form-control" [(ngModel)]="selectedLanguage" (change)="languageChanged()">
-          <option>English</option>
-          <option>Irish</option>
-          <option>Spanish</option>
-          <option>French</option>
-          <option>Dutch</option>
-        </select>
+        <li class="nav-item-text">{{language.placeHolders.language}}: </li>
+        <li>
+          <select class="form-control" [(ngModel)]="selectedLanguage" (change)="languageChanged()">
+            <option>English</option>
+            <option>Irish</option>
+            <option>Spanish</option>
+            <option>French</option>
+            <option>Dutch</option>
+          </select>
+        </li>
       </ul>
     </div>
   </div>

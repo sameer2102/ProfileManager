@@ -12,7 +12,8 @@
         "save":"Save",
         "loadingProfile":"Loading profile...",
         "savingProfile":"Saving profile...",
-        "error":"Error!"
+        "error":"Error!",
+        "language":"Language"
       }
     },
     {
@@ -27,7 +28,8 @@
         "save":"sauvegarder",
         "loadingProfile":"Chargement du profil...",
         "savingProfile":"Enregistrement du profil...",
-        "error":"Erreur!"
+        "error":"Erreur!",
+        "language":"Langue"
       }
     },
     {
@@ -42,7 +44,8 @@
         "save":"Sábháil",
         "loadingProfile":"Próifíl luchtaithe ...",
         "savingProfile":"Próifíl shábháil ...",
-        "error":"Earráid!"
+        "error":"Earráid!",
+        "language":"Teanga"
       }
     },
     {
@@ -57,7 +60,8 @@
         "save":"Opslaan",
         "loadingProfile":"Profiel laden...",
         "savingProfile":"Profiel opslaan...",
-        "error":"Fout!"
+        "error":"Fout!",
+        "language":"Taal"
       }
     },
     {
@@ -72,7 +76,8 @@
         "save":"Guardar",
         "loadingProfile":"Cargando perfil ...",
         "savingProfile":"Guardando perfil ...",
-        "error":"Error!"
+        "error":"Error!",
+        "language":"Idioma"
       }
     }
 
