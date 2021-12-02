@@ -6,7 +6,7 @@ import { UtilService } from '../services/util.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnChanges {
+export class HeaderComponent implements OnInit {
   @Input() language:any;
   selectedLanguage:string='English';
   constructor(private utilService:UtilService) { }
@@ -15,12 +15,6 @@ export class HeaderComponent implements OnInit, OnChanges {
 
   }
 
-ngOnChanges(){
-  if(this.language){
-    console.log("Header",this.language.placeHolders.header);
-  }
-
-}
 
   languageChanged(){
     this.utilService.languageSelection.next(this.selectedLanguage);

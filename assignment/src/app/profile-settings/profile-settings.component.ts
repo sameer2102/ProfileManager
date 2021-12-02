@@ -12,6 +12,7 @@ export class ProfileSettingsComponent implements OnInit {
   public title = 'Profile';
   loadingData: boolean = false;
   savingData: boolean = false;
+  saveDisable: boolean = false;
   nameError:string="";
   emailError:string="";
   public user: IProfile = {};
@@ -42,16 +43,15 @@ export class ProfileSettingsComponent implements OnInit {
           firstName : userData.firstName,
           lastName : userData.lastName
         }
-        console.log("UserData", userData);
         this.loadingData = false;
       })
       .catch((error) => {
-        console.log("Error", error);
         this.getProfile();
       });
   }
 
   saveProfile() {
+    this.saveDisable=true;
     this.nameError='';
     this.emailError='';
     this.savingData=true;
@@ -63,27 +63,35 @@ export class ProfileSettingsComponent implements OnInit {
       })
       .catch((err)=>{
         this.nameError=err.error;
-        console.log("Error", err);
         this.savingData=false;
-      });
+        this.emailError='';
+        this.saveDisable=false;
+      })
+
     }
    }
 
-   nameChanged(){
+   nameChanged(event:any){
     this.nameError='';
     this.emailError='';
+    const globalRegex = new RegExp('^[A-Za-z]+$', 'g');
+    let value:string =event.target.value;
+    if(!globalRegex.test(value.charAt(value.length - 1))){
+      event.target.value = value.substr(0,value.length-1);
+    }
+
    }
 
    saveEmail(user:IProfile){
       let email:string = user.firstName?.replace(/\s/g, "") + "." + user.lastName?.replace(/\s/g, "")+"@blueface.com"
       this.profile.setUserEmail(email)
       .then((user)=>{
-        console.log("Email Saved");
+        this.saveDisable=false;
       })
       .catch((err)=>{
-        console.log("Email Error", err);
         this.emailError=err.error;
         this.resetForm();
+        this.saveDisable=false;
       });
    }
 

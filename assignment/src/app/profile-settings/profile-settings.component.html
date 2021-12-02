@@ -22,7 +22,7 @@
                 [disabled]="loadingData"
                 [(ngModel)]="user.firstName"
                 class="form-control"
-                (input)="nameChanged()"
+                (input)="nameChanged($event)"
               />
             </div>
             <div>
@@ -32,7 +32,7 @@
                 [disabled]="loadingData"
                 [(ngModel)]="user.lastName"
                 class="form-control"
-                (input)="nameChanged()"
+                (input)="nameChanged($event)"
               />
             </div>
             <div>
@@ -47,7 +47,7 @@
             <br />
             <button
               class="btn-primary btn-lg rounded-button"
-              style="background-color: #2a99c5; width: 360px"
+              [disabled]="loadingData || saveDisable"
               (click)="saveProfile()"
             >
             {{language.placeHolders.save}}
