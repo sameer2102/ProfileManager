@@ -13,6 +13,8 @@ export class ProfileSettingsComponent implements OnInit {
   loadingData: boolean = false;
   savingData: boolean = false;
   saveDisable: boolean = false;
+  firstBlankError: boolean = false;
+  lastBlankError: boolean = false;
   nameError:string="";
   emailError:string="";
   public user: IProfile = {};
@@ -71,7 +73,7 @@ export class ProfileSettingsComponent implements OnInit {
     }
    }
 
-   nameChanged(event:any){
+   firstNameChanged(event:any){
     this.nameError='';
     this.emailError='';
     const globalRegex = new RegExp('^[A-Za-z]+$', 'g');
@@ -79,8 +81,31 @@ export class ProfileSettingsComponent implements OnInit {
     if(!globalRegex.test(value.charAt(value.length - 1))){
       event.target.value = value.substr(0,value.length-1);
     }
+    if(event.target.value == ''){
+      this.firstBlankError=true;
+    }else{
+      this.firstBlankError=false;
+    }
 
    }
+
+   lastNameChanged(event:any){
+    this.nameError='';
+    this.emailError='';
+    const globalRegex = new RegExp('^[A-Za-z]+$', 'g');
+    let value:string =event.target.value;
+    if(!globalRegex.test(value.charAt(value.length - 1))){
+      event.target.value = value.substr(0,value.length-1);
+    }
+    if(event.target.value == ''){
+      this.lastBlankError=true;
+    }else{
+      this.lastBlankError=false;
+    }
+
+   }
+
+
 
    saveEmail(user:IProfile){
       let email:string = user.firstName?.replace(/\s/g, "") + "." + user.lastName?.replace(/\s/g, "")+"@blueface.com"

@@ -22,7 +22,7 @@
                 [disabled]="loadingData"
                 [(ngModel)]="user.firstName"
                 class="form-control"
-                (input)="nameChanged($event)"
+                (input)="firstNameChanged($event)"
               />
             </div>
             <div>
@@ -32,7 +32,7 @@
                 [disabled]="loadingData"
                 [(ngModel)]="user.lastName"
                 class="form-control"
-                (input)="nameChanged($event)"
+                (input)="lastNameChanged($event)"
               />
             </div>
             <div>
@@ -47,7 +47,7 @@
             <br />
             <button
               class="btn-primary btn-lg rounded-button"
-              [disabled]="loadingData || saveDisable"
+              [disabled]="loadingData || saveDisable || firstBlankError || lastBlankError"
               (click)="saveProfile()"
             >
             {{language.placeHolders.save}}
@@ -61,6 +61,9 @@
     <div class="row" style="text-align: center; font-family: Rubik">
       <div class="info message" *ngIf="loadingData">{{language.placeHolders.loadingProfile}}</div>
       <div class="info message" *ngIf="savingData">{{language.placeHolders.savingProfile}}</div>
+      <div class="error message" *ngIf="firstBlankError || lastBlankError">
+        <span style="font-weight: bold">{{language.placeHolders.error}}</span> First Name and Last Name cannot be blank
+      </div>
       <div class="error message" *ngIf="nameError != ''">
         <span style="font-weight: bold">{{language.placeHolders.error}}</span> {{ nameError }}
       </div>
